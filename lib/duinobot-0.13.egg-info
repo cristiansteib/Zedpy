@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: duinobot
+Version: 0.13
+Summary: API en Python para el robot Multiplo N6
+Home-page: http://lihuen.linti.unlp.edu.ar
+Author: Joaquin Bogado, Fernando Lopez
+Author-email: soportelihuen@linti.unlp.edu.ar
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Education
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Requires: pyserial
+Requires: pygame

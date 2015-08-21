@@ -1,0 +1,49 @@
+__author__ = 'GasparcitoX'
+import duinobot
+import data
+import pilas
+
+
+class Mover_Robot:
+    '''
+    Recibe un diccionario con pares de tuplas los cuales son los movimientos seleccionados por el jugador
+    Ej:{0: ('avanzar', 0), 1: ('avanzar', 0), 2: ('avanzar', 0), 3: ('avanzar', 0)}
+    '''
+
+    def __init__(self):
+        """
+        TOMA LOS DATOS DE LA CONFIGURACION PARA ESTABLECER EL PUERTO DE COMUNICACION Y ID DEL ROBOT
+
+
+        """
+
+    def mover(self, diccionario):
+
+        try:
+            self.config = data.Configuracion()
+            self.b = duinobot.Board(self.config.board)
+            self.r = duinobot.Robot(self.b, self.config.idrobot)
+            keys = diccionario.keys()
+            for k in keys:
+            	veces=diccionario[k][1]
+            	if veces==0:
+            		veces=1
+
+                if (diccionario[k][0] == 'avanzar'):
+                    print ('avanza')
+                    self.r.forward(self.config.speedrobot, self.config.timerobot * veces )
+
+                if (diccionario[k][0] == 'der'):
+                    print ('der')
+                    self.r.turnRight(self.config.speedrobot, self.config.timerobot * veces)
+
+                if (diccionario[k][0] == 'izq'):
+                    print ('izq')
+                    self.r.turnLeft(self.config.speedrobot, self.config.timerobot * veces)
+
+                if (diccionario[k][0] == 'retroceder'):
+                    print ('atras')
+                    self.r.backward(self.config.speedrobot, self.config.timerobot * veces)
+        except():
+            pilas.avisar("Error en la comunicacion")
+            print 'Error de comunicacion'
